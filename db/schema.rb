@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2020_06_13_125241) do
     t.integer "black_id"
     t.string "event", null: false
     t.string "round"
+    t.string "result"
     t.integer "handicap", default: 0
     t.decimal "komi", precision: 2, scale: 1, null: false
-    t.string "result"
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

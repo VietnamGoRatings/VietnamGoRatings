@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: matches
@@ -26,7 +24,11 @@
 #  black_id  (black_id => players.id)
 #  white_id  (white_id => players.id)
 #
-class Match < ApplicationRecord
-  belongs_to :white, class_name: 'Player', foreign_key: "white_id"
-  belongs_to :black, class_name: 'Player', foreign_key: "black_id"
+FactoryBot.define do
+  factory :match do
+    event { 'Test event'}
+    komi { 6.5 }
+    result { 'B+5.5' }
+    handicap { 0 }
+  end
 end

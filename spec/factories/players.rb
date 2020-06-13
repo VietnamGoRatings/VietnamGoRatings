@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: players
@@ -18,9 +16,11 @@
 #
 #  club_id  (club_id => clubs.id)
 #
-class Player < ApplicationRecord
-  belongs_to :club
-  has_many :matches, ->(player) {
-    unscope(:where).where(white: player).or(where(black: player))
-  }
+FactoryBot.define do
+  factory :player do
+    trait :with_club do
+      association :club, factory: :club
+    end
+    name { Faker::Name.name }
+  end
 end
