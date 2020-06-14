@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    title
+      | VietnamGoRatings
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+  body
+    - if notice
+      |  <p class="
+      a[href=""]
+      | lert alert-success">
+      = notice
+    - if alert
+      p.alert.alert-danger
+        = alert
+    = yield

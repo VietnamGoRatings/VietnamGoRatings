@@ -23,4 +23,8 @@ class Player < ApplicationRecord
   has_many :matches, ->(player) {
     unscope(:where).where(white: player).or(where(black: player))
   }
+
+  def find_for_club(club_id)
+    Player.where(club_id: club_id).all
+  end
 end

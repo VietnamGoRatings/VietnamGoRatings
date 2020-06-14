@@ -1,0 +1,5 @@
+table#clubs
+  - for club in @clubs
+    tr
+      td.name
+        = link_to club.name, club_path(id: club.id)

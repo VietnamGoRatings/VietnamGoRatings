@@ -1,3 +1,21 @@
+# == Schema Information
+#
+# Table name: players
+#
+#  id         :integer          not null, primary key
+#  name       :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  club_id    :integer          not null
+#
+# Indexes
+#
+#  index_players_on_club_id  (club_id)
+#
+# Foreign Keys
+#
+#  club_id  (club_id => clubs.id)
+#
 require 'rails_helper'
 RSpec.describe Player, type: :model do
   describe "matches" do
