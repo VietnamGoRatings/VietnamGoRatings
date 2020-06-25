@@ -1,0 +1,3 @@
+class FileUpdate < ApplicationRecord
+
+end

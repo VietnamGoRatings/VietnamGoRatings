@@ -4,15 +4,18 @@
 #
 # Table name: players
 #
-#  id         :integer          not null, primary key
-#  name       :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
-#  club_id    :integer          not null
+#  id           :integer          not null, primary key
+#  birthyear    :integer          not null
+#  display_name :string           not null
+#  name         :string           not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#  club_id      :integer          not null
 #
 # Indexes
 #
-#  index_players_on_club_id  (club_id)
+#  index_players_on_club_id             (club_id)
+#  index_players_on_name_and_birthyear  (name,birthyear) UNIQUE
 #
 # Foreign Keys
 #

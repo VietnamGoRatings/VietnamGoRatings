@@ -1,0 +1,6 @@
+= @update_from_files.size
+table
+  - @update_from_files.each do |record|
+    tr
+      td = record.file.filename
+      td = link_to "Download", rails_blob_url(record.file, disposition: "attachment")
