@@ -42,8 +42,13 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'annotate'
   gem 'rubocop'
+  gem "capistrano", "~> 3.10", require: false
+  gem "capistrano-rails", "~> 1.5", require: false
+  gem 'capistrano-rvm'
+  # Support openSSL key for cap deploy
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
 end
 
 group :test do
@@ -61,3 +66,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails'
 gem 'devise'
 gem 'rubyXL'
+
+gem 'annotate'
