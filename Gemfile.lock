@@ -81,8 +81,6 @@ GEM
     capistrano-rails (1.5.0)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rsync (1.0.2)
-      capistrano (>= 3.0.0.pre14, < 4)
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
@@ -300,7 +298,6 @@ DEPENDENCIES
   byebug
   capistrano (~> 3.10)
   capistrano-rails (~> 1.5)
-  capistrano-rsync
   capistrano-rvm
   capybara (>= 2.15)
   devise
