@@ -46,6 +46,7 @@ group :development do
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-rails", "~> 1.5", require: false
   gem 'capistrano-rvm'
+  gem 'capistrano-passenger'
   # Support openSSL key for cap deploy
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
