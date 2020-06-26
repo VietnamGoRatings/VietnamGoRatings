@@ -46,7 +46,7 @@ group :development do
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-rails", "~> 1.5", require: false
   gem 'capistrano-rvm'
-  gem 'capistrano-passenger'
+  gem 'capistrano3-puma' , group: :development
   # Support openSSL key for cap deploy
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
@@ -67,5 +67,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails'
 gem 'devise'
 gem 'rubyXL'
-gem 'passenger'
 gem 'annotate'
