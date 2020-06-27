@@ -25,5 +25,7 @@ FactoryBot.define do
       association :club, factory: :club
     end
     name { Faker::Name.name }
+    display_name {:name}
+    birthyear {Faker::Number.between(from: 1940, to: 2050)}
   end
 end
