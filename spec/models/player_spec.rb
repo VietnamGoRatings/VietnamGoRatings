@@ -5,6 +5,7 @@
 #  id           :integer          not null, primary key
 #  birthyear    :integer          not null
 #  display_name :string           not null
+#  is_male      :integer          default(1), not null
 #  name         :string           not null
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
