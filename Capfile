@@ -2,7 +2,6 @@
 require "capistrano/setup"
 
 # Include default deployment tasks
-require "capistrano/deploy"
 
 # Load the SCM plugin appropriate to your project:
 #
@@ -27,11 +26,13 @@ install_plugin Capistrano::SCM::Git
 #   https://github.com/capistrano/passenger
 #
 require "capistrano/rvm"
+require "capistrano/rake"
 #require "capistrano/rbenv"
 # require "capistrano/chruby"
 # require "capistrano/bundler"
-# require "capistrano/rails/assets"
-# require "capistrano/rails/migrations"
+require "capistrano/rails/assets"
+require "capistrano/rails/migrations"
+require "capistrano/deploy"
 require 'capistrano/puma'
 install_plugin Capistrano::Puma  # Default puma tasks
 require 'capistrano/rails'
