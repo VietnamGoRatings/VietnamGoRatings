@@ -9,6 +9,7 @@
 #  display_name :string           not null
 #  is_male      :integer          default(1), not null
 #  name         :string           not null
+#  rating       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  club_id      :integer          not null
@@ -30,5 +31,9 @@ class Player < ApplicationRecord
 
   def find_for_club(club_id)
     Player.where(club_id: club_id).all
+  end
+
+  def is_active
+    (matches.size > 0) && (matches.maximum(:date) >= (Date.today - 365*4))
   end
 end

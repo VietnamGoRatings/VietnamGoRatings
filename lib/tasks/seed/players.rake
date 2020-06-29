@@ -1,14 +1,15 @@
 namespace :import do
   desc "Import players from old database"
   task players: :environment do
+    female_name = File.open(Rails.root.join("db/female-name.txt")).read.split("\n")
     path = Rails.root.join("db/current-player.csv")
     data = File.open(path, "r").read.split("\n")
     club = Club.find_by!(name: "No Info")
     data.each do |line|
       items = line.split(",")
-      is_male = items[2]
       display_name = items[1]
       name = display_name.downcase
+      is_male = !female_name.include?(name)
       player = Player.find_by(name: name)
       if (not player)
         Player.create(name: name, display_name: display_name, is_male: is_male, club_id: club.id, birthyear: 0)
@@ -41,7 +42,7 @@ namespace :import do
       white_name = items[1].downcase
       white = Player.find_by!(name: white_name)
       black_won = items[2]
-      result = ((black_won == 1) ? "B+":"W+")
+      result = ((black_won == "1") ? "B+":"W+")
       tournament_name = items[3]
       date = original_date + Integer(items[4])
       Match.find_or_create_by!(date: date, event: tournament_name, komi: 6.5, result: result, black: black, white: white)

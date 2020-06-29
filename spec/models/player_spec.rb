@@ -7,6 +7,7 @@
 #  display_name :string           not null
 #  is_male      :integer          default(1), not null
 #  name         :string           not null
+#  rating       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  club_id      :integer          not null
