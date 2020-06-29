@@ -50,6 +50,7 @@ group :development do
   # Support openSSL key for cap deploy
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
+  gem 'capistrano-rake', require: false
 end
 
 group :test do
