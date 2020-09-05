@@ -1,4 +1,6 @@
 class Admin::Clubs::UpdatePlayersController < ApplicationController
+  before_action :authorize!
+
   def new
     @update = UpdateFromFile.new
   end
@@ -20,5 +22,9 @@ class Admin::Clubs::UpdatePlayersController < ApplicationController
 
   def allowed_params
     @allowed_params ||= params.require(:update_from_file).permit(:file, :club_id)
+  end
+
+  def authorize!
+    authorize UpdateFromFile
   end
 end
