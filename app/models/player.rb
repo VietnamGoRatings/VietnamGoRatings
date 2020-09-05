@@ -25,7 +25,7 @@
 #
 class Player < ApplicationRecord
   belongs_to :club
-  has_many :matches, ->(player) {
+  has_many :matches, lambda { |player|
     unscope(:where).where(white: player).or(where(black: player))
   }
 
@@ -33,7 +33,7 @@ class Player < ApplicationRecord
     Player.where(club_id: club_id).all
   end
 
-  def is_active
-    (matches.size > 0) && (matches.maximum(:date) >= (Date.today - 365*4))
+  def active?
+    !matches.empty? && (matches.maximum(:date) >= (Date.today - 365 * 4))
   end
 end

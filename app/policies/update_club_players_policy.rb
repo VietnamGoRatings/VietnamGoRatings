@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UpdateClubPlayersPolicy
   attr_reader :user, :record
 

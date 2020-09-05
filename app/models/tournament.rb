@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: tournaments
@@ -8,5 +10,4 @@
 #  start_date :integer
 #
 class Tournament < ApplicationRecord
-
 end

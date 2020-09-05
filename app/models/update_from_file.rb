@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: update_from_files
@@ -11,5 +13,4 @@
 class UpdateFromFile < ApplicationRecord
   after_create_commit :process_file
   has_one_attached :file
-
 end
