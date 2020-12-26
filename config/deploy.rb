@@ -2,7 +2,7 @@
 lock "~> 3.14.1"
 set :application, "VietnamGoRatings"
 set :repo_url, "git@github.com:VietnamGoRatings/VietnamGoRatings.git"
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads', 'node_modules'
 append :linked_files, "config/master.key"
 namespace :deploy do
   namespace :check do
