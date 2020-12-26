@@ -1,7 +1,9 @@
 module.exports = {
-  purge: [
-    '../../views/**/*.html.slim'
-  ],
+  purge: {
+    content: [
+      '../../views/**/*.html.slim'
+    ]
+  },
   target: 'relaxed',
   prefix: '',
   important: false,
