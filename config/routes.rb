@@ -10,5 +10,7 @@ Rails.application.routes.draw do
         resources :update_players, controller: 'clubs/update_players'
       end
     end
+    resources :tournaments do
+    end
   end
 end
