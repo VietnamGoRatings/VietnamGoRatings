@@ -17,7 +17,7 @@ class Admin::Clubs::UpdatePlayersController < ApplicationController
   end
 
   def index
-    @update_from_files = UpdateFromFile.all
+    @update_from_files = UpdateClubPlayers.all
   end
 
   private
@@ -27,6 +27,6 @@ class Admin::Clubs::UpdatePlayersController < ApplicationController
   end
 
   def authorize!
-    authorize UpdateFromFile
+    authorize UpdateClubPlayers
   end
 end

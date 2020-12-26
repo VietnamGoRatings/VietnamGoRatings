@@ -9,6 +9,7 @@ let
     libxml2
     lzma
     sqlite
+    libffi
   ];
 
 in

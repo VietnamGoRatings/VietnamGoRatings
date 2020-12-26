@@ -18,7 +18,7 @@ namespace :import do
   end
 
   desc "Import tournament from old database"
-  task tournamentes: :environment do
+  task tournaments: :environment do
     path = Rails.root.join("db/current-tournament.csv")
     data = File.open(path, "r").read.split("\n")
     data.each do |line|
