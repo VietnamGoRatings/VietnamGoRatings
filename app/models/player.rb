@@ -34,6 +34,6 @@ class Player < ApplicationRecord
   end
 
   def active?
-    !matches.empty? && (matches.maximum(:date) >= (Date.today - 365 * 4))
+    !matches.empty? && (matches.maximum(:date) >= (Date.today - 365 * 3))
   end
 end

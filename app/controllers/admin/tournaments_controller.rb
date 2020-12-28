@@ -8,7 +8,7 @@ class Admin::TournamentsController < ApplicationController
     date = allowed_params[:date]
     allowed_params.delete(:date)
     update = UpdateTournament.new(allowed_params)
-    update.data = JSON.generate({date: date})
+    update.data = JSON.generate({date: date, official_sheet: true})
     update.save!
 
   end
