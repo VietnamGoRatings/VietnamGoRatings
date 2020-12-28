@@ -3,14 +3,14 @@
 # Table name: players
 #
 #  id           :integer          not null, primary key
-#  birthyear    :integer          not null
-#  display_name :string           not null
+#  birthyear    :integer
+#  display_name :string
 #  is_male      :integer          default(1), not null
 #  name         :string           not null
 #  rating       :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
-#  club_id      :integer          not null
+#  club_id      :integer
 #
 # Indexes
 #

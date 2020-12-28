@@ -1,9 +1,19 @@
+# == Schema Information
+#
+# Table name: update_from_files
+#
+#  id         :integer          not null, primary key
+#  data       :string           not null
+#  type       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
 class UpdateTournament < UpdateFromFile
   def process_file
     parsed_data = JSON.parse(data)
     date = Date.parse(parsed_data["date"]) if parsed_data["date"] != ""
     type = parsed_data["official_sheet"]
-    if type
+    if type == "1"
       parser_data = TournamentOfficialParser.new.call(RubyXL::Parser.parse_buffer(file.download))
     else
       parser_data = TournamentParser.new.call(RubyXL::Parser.parse_buffer(file.download))

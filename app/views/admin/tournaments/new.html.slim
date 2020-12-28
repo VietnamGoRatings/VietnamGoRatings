@@ -1,4 +1,5 @@
 = form_with model: Tournament.new, url:admin_tournaments_path  do |f|
   = f.file_field :file
   = f.text_field :date
+  = f.check_box :official_sheet
   = f.submit
