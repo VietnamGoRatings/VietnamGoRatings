@@ -1,0 +1,27 @@
+table#matches
+  tr
+    td = "STT"
+    td = "Black"
+    td = "White"
+    td = "Result"
+    td = "Handicap"
+    td = "Komi"
+    td = "Date"
+  - @matches.each_with_index do |match, index|
+    tr
+      td
+        = index + 1;
+      td
+        = match.black.screen_name
+      td
+        = match.white.screen_name
+      td
+        = match.result
+      td
+        = match.handicap
+      td 
+        = match.komi
+      td
+        = match.date
+    
+      
