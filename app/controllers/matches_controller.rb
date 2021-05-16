@@ -1,6 +1,7 @@
 class MatchesController < ApplicationController
     def index
-      @matches = Match.all
+      id = params.require(:id)
+      @matches = Player.find(id).matches
     end
   end
   
