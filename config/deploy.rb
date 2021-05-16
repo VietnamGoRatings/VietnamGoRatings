@@ -2,6 +2,7 @@
 lock "~> 3.16.0"
 set :application, "VietnamGoRatings"
 set :repo_url, "git@github.com:VietnamGoRatings/VietnamGoRatings.git"
+set :puma_service_unit_name, "puma"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads', 'node_modules'
 append :linked_files, "config/master.key"
 namespace :deploy do
