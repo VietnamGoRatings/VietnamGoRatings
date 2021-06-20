@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_28_124045) do
+ActiveRecord::Schema.define(version: 2021_06_20_070318) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2020_12_28_124045) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tournament_id"
     t.index ["black_id"], name: "index_matches_on_black_id"
     t.index ["white_id"], name: "index_matches_on_white_id"
   end
@@ -96,5 +97,6 @@ ActiveRecord::Schema.define(version: 2020_12_28_124045) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "matches", "players", column: "black_id"
   add_foreign_key "matches", "players", column: "white_id"
+  add_foreign_key "matches", "tournaments"
   add_foreign_key "players", "clubs"
 end

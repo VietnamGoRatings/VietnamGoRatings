@@ -10,4 +10,5 @@
 #  start_date :integer
 #
 class Tournament < ApplicationRecord
+  has_many :matches
 end
