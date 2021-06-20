@@ -14,6 +14,7 @@ class TournamentParser
     pos_player_mapping = {}
     player_pos = 1
     while(sheet[j] != nil && sheet[j][1] != nil)
+      puts j
       name = normalize_name(sheet[j][1].value.strip)
       players.push(name)
       player_pos_mapping[name] = player_pos

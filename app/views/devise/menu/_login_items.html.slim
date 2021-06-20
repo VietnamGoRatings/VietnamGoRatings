@@ -13,8 +13,8 @@
               a.bg-gray-900.text-white.px-3.py-2.rounded-md.text-sm.font-medium href="#"  Ratings
               = link_to "Add a new tournament", new_admin_tournament_path,
                 class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-              a.text-gray-300.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium href="#"  Projects
-              a.text-gray-300.hover:bg-gray-700.hover:text-white.px-3.py-2.rounded-md.text-sm.font-medium href="#"  Calendar
+              = link_to "Tournaments", admin_tournaments_path,
+                class: "text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
         .absolute.inset-y-0.right-0.flex.items-center.pr-2.sm:static.sm:inset-auto.sm:ml-6.sm:pr-0
           = link_to('Logout', destroy_user_session_path,
                     class:"text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium ", method: :delete)

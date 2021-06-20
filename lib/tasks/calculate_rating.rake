@@ -8,7 +8,7 @@ namespace :rating do
       days_from_start = Integer(match.date - Date.new(2000,1,1))
       whr.create_game(match.black_id, match.white_id, result, days_from_start, 0)
     end
-    whr.iterate(1000)
+    whr.iterate(2000)
 
 
     women_whr = WholeHistoryRating::Base.new(w2: 14)
@@ -17,7 +17,7 @@ namespace :rating do
       days_from_start = Integer(match.date - Date.new(2000,1,1))
       women_whr.create_game(match.black_id, match.white_id, result, days_from_start, 0)
     end
-    women_whr.iterate(1000)
+    women_whr.iterate(2000)
     ActiveRecord::Base.transaction do
       Player.update_all(rating: nil)
       Player.where(is_male: 1).all.each do |player|

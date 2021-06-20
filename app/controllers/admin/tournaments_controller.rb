@@ -15,6 +15,13 @@ class Admin::TournamentsController < ApplicationController
 
   end
 
+  def index
+    @tournaments = Tournament.all
+  end
+
+  def show
+    @tournament = Tournament.find_by(params[:id])
+  end
   private
   def allowed_params
     @allowed_params ||= params.require(:tournament).permit(:file, :date, :official_sheet)

@@ -22,6 +22,7 @@ class UpdateTournament < UpdateFromFile
     matches = parser_data[1]
     tournament_name = parser_data[2]
     ActiveRecord::Base.transaction do
+      tournament = Tournament.create(name: tournament_name, start_date: date, end_date: date)
       matches.each do |match|
         black_id = Player.find_or_create_by!(name: match[:black_name]).id
         puts match[:white_name]
@@ -31,12 +32,12 @@ class UpdateTournament < UpdateFromFile
         if tournament_name != nil
           Match.create!(black_id: black_id, white_id: white_id,
                        result: result, date: date, event:tournament_name,
-                       komi: 6.5)
+                       komi: 6.5, tournament: tournament)
         else
           Match.create!(black_id: black_id, white_id: white_id,
                        result: match[:result], date: match[:date],
                        event: match[:event], round: match[:round],
-                       komi: match[:komi])
+                       komi: match[:komi], tournament: tournament)
         end
       end
     end
