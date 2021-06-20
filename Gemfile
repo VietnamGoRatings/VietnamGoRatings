@@ -51,6 +51,7 @@ group :development do
   gem 'ed25519'
   gem 'bcrypt_pbkdf'
   gem 'capistrano-rake', require: false
+  gem 'solargraph'
 end
 
 group :test do
